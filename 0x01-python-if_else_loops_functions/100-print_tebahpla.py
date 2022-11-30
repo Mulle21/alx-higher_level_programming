@@ -6,4 +6,3 @@ for index in range(0, 26):
     else:
         word = chr(word)
         print("{}".format(word), end='')
-
