@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-for index in range(0, 26):
-    word = ord('z') - index
-    if (index % 2 == 1):
-        word = chr(word - ord('a') + ord('A'))
+for i in range(122, 96, -1):
+    if i % 2 == 0:
+        n = chr(i)
     else:
-        word = chr(word)
-        print("{}".format(word), end='')
+        n = chr(i-32)
+    print("{}".format(n), end="")
