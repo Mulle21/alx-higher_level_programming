@@ -5,4 +5,4 @@ for index in range(0, 26):
         word = chr(word - ord('a') + ord('A'))
     else:
         word = chr(word)
-        print("{}".format(word), end='')
+     print("{}".format(word), end='')
