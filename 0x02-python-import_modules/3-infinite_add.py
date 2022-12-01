@@ -8,4 +8,4 @@ if __name__ == "__main__":
     for i in range(1, argc):
         res = res + int(argv[i])
 
-        print(res)
+    print(res)
