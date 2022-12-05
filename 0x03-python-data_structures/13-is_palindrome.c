@@ -1,30 +1,5 @@
 #include "lists.h"
 /**
- * palindrome - check if is palindrome with recursion
- * @l: l
- * @r: r
- *
- * Return: 1 palindrome, 0 not palindrome
- */
-int palindrome(listint_t **l, listint_t *r)
-{
-	int response;
-
-	if (r != NULL)
-	{
-		response = palindrome(l, r->next);
-		if (response != 0)
-		{
-			response = (r->n == (*l)->n);
-			*l = (*l)->next;
-			return (response);
-		}
-		return (0);
-	}
-	return (1);
-}
-
-/**
  * is_palindrome - checks if a singly linked list is a palindrome.
  * @head: head of linked list
  *
@@ -32,10 +7,25 @@ int palindrome(listint_t **l, listint_t *r)
  */
 int is_palindrome(listint_t **head)
 {
-	int is_palindrome(listint_t **head)
+	listint_t *cur = *head;
+	int tab[2048], i = 0, j = 0;
+
+	if (*head)
 	{
-		return (0);
+		while (cur)
+		{
+			tab[i] = cur->n;
+			cur = cur->next;
+			i++;
+		}
+		while (j < i / 2)
+		{
+			if (tab[j] == tab[i - j - 1])
+				j++;
+			else
+				return (0);
+		}
 	}
-	return (palindrome(head, *head));
+	return (1);
 }
 
