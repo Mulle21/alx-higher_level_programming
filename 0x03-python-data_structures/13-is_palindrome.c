@@ -3,29 +3,53 @@
  * is_palindrome - checks if a singly linked list is a palindrome.
  * @head: head of linked list
  *
- * Return: 1 palindrome, 0 not palindrome
+ * Return: 0 if not palindrome, 1 if is palindrome
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *cur = *head;
-	int tab[2048], i = 0, j = 0;
-
-	if (*head)
+	if (!*head || !(*head))
 	{
-		while (cur)
+		return (1);
+	}
+
+	if (p_check(head, *head))
+	{
+		return (1);
+	}
+
+	if (p_check(head, *head))
+	{
+		return (1);
+	}
+	return (0);
+}
+
+/**
+ *  p_check - Check for palindrome
+ *  @left: Go left
+ *
+ * @right: Go right
+ * Return: Integer
+ */
+
+
+int p_check(listint_t **left, listint_t *right)
+{
+	int is_p = 0;
+
+	if (right)
+	{
+		is_p = p_check(left, right->next);
+	}
+
+	if (is_p == 1)
+	{
+		if ((*left)->n == right->n)
 		{
-			tab[i] = cur->n;
-			cur = cur->next;
-			i++;
-		}
-		while (j < i / 2)
-		{
-			if (tab[j] == tab[i - j - 1])
-				j++;
-			else
-				return (0);
+			(*left) = (*left)->next;
+			return (1);
 		}
 	}
-	return (1);
+	return (0);
 }
 
