@@ -2,7 +2,6 @@
 """ Creating a square class """
 
 
-
 class Square:
     """ Defining a class square """
     def __init__(self, size=0):
@@ -36,4 +35,3 @@ class Square:
         else:
             for i in range(self.__size):
                 print("#" * self.__size)
-
