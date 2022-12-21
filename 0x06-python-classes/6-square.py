@@ -1,4 +1,4 @@
-#!/usr/bin/pythoni3
+#!/usr/bin/python3
 """ Creating a square class """
 
 
