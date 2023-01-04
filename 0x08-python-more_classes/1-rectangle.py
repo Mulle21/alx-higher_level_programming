@@ -3,6 +3,7 @@
 This module defines the a Rectangle Object.
 """
 
+
 class Rectangle:
     """Retangle object with getter and setters
     """
