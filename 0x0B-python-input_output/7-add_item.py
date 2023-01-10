@@ -1,10 +1,8 @@
 #!/usr/bin/python3
-"""Module 9-add_item.
-Adds all arguments to a Python list,
-and then save them to a file.
-"""
+"""Module for saving to json"""
 
 import sys
+from sys import argv
 import json
 import os.path
 
@@ -15,11 +13,10 @@ my_file = 'add_item.json'
 
 my_list = []
 
-if os.path.exists(my_file) and os.path.getsize(my_file) > 0:
-        my_list = load_from_json_file(my_file)
+if os.path.exists(filename):
+    json_list = load_from_json_file(filename)
 
-if len(sys.argv) > 1:
-    for elem in sys.argv[1:]:
-        my_list.append(elem)
+for index in argv[1:]:
+    json_list.append(index)
 
-save_to_json_file(my_list, my_file)
+save_to_json_file(json_list, filename)
