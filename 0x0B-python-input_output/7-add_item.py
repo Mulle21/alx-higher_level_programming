@@ -18,8 +18,8 @@ my_list = []
 if os.path.exists(my_file) and os.path.getsize(my_file) > 0:
         my_list = load_from_json_file(my_file)
 
-if len(sys.argv) > 1:
-    for elem in sys.argv[1:]:
-        my_list.append(elem)
+        if len(sys.argv) > 1:
+            for elem in sys.argv[1:]:
+                my_list.append(elem)
 
-save_to_json_file(my_list, my_file)
+                save_to_json_file(my_list, my_file)
