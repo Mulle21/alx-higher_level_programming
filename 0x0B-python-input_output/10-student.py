@@ -1,37 +1,20 @@
 #!/usr/bin/python3
-"""
-Module for class Student
-"""
+"""Student class defines a student"""
 
 
 class Student:
-   """
-   A class students that defines a student by:
-   Attributes:
-   first_name (str): name of student.
-   last_name (str): name of student.
-   age (int): age of student.
-   Methods:
-     __init__ - initializes the Student instance.
-     to_json - retrieves dictionary repr of Student instance.
-   """
-   def __init__(self, first_name, last_name, age):
-       """
-       Initialises Student instance.
-       """
-       self.first_name = first_name
-       self.last_name = last_name
-       self.age = age
+    """defines a student"""
+    def __init__(self, first_name, last_name, age):
+        """instantiation"""
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
 
-       def to_json(self, attr=None):
-           """
-           retrieves a dictionary representation of Student.
-           Args:
-               attr (list): attribute names that are to be retrieved.
-           """
-
-           if attr is not None:
-               res = {k: self.__dict__[k] for k in self.__dict__.keys() & attr}
-               return res
-           else:
-               return self.__dict__
+    def to_json(self, attrs=None):
+        """retrieves a dictionary representation of
+        Student instance if attrs is a list of stirngs, only
+        only attribute name contained in the list must be retrieved
+        else all attributes must be retrieved"""
+        if type(attrs) == list and all(type(elem) == str for elem in attrs):
+            return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
+        return self.__dict__
