@@ -8,3 +8,5 @@ function factorial (numb) {
     return numb * factorial(numb - 1);
   }
 }
+
+console.log(factorial(numb));
