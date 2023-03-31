@@ -1,4 +1,4 @@
-#!usr/bin/pythin3
+#!/usr/bin/python3
 """Python script Fetches https://intranet.hbtn.io/status."""
 if __name__ == "__main__":
     import urllib.request
