@@ -6,7 +6,7 @@ import requests
 
 
 if __name__ == "__main__":
-    url = "https://api.github.com/repos/{}/{}/commits".format(
+    url = "https://developer.github.com/v3/repos/commits/{}/{}/commits".format(
         sys.argv[2], sys.argv[1])
 
     m = requests.get(url)
@@ -14,7 +14,6 @@ if __name__ == "__main__":
     try:
         for i in range(10):
             print("{}: {}".format(
-                commits[i].get("sha"),
-                commits[i].get("commit").get("author").get("name")))
+                commits[i].get("commit").get("sha").get("author").get("name")))
     except IndexError:
         pass
