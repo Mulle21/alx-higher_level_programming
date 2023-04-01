@@ -6,10 +6,8 @@ if __name__ == "__main__":
     import requests
     import sys
 
-    url = "https://api.github.com/octocat"
-    header = "Authorization: Bearer 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"
-    header = "X-GitHub-Api-Version: 2022-11-28"
-    sys.argv[1]
+    url = "https://api.github.com/user"
+    user = sys.argv[1]
     passwd = sys.argv[2]
     data_res = requests.get(url, auth=(user, passwd))
 
