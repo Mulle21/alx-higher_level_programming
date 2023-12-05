@@ -17,3 +17,4 @@ if __name__ == '__main__':
                 ORDER BY cities.id ASC")
     rows = cur.fetchall()
     for row in rows:
+        print(row)
