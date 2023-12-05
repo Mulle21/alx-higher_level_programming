@@ -15,3 +15,4 @@ if __name__ == '__main__':
                 ORDER BY states.id ASC", (sys.argv[4],))
     rows = cur.fetchall()
     for row in rows:
+        print(row)
