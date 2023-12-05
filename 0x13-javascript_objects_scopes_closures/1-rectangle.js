@@ -1,10 +1,7 @@
-
 #!/usr/bin/node
-// create class `Rectangle` that defines a rectangle
-class Rectangle {
+module.exports = class Rectangle {
   constructor (w, h) {
     this.width = w;
     this.height = h;
   }
-}
-
+};
