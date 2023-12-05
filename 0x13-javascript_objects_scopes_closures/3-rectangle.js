@@ -1,6 +1,5 @@
 #!/usr/bin/node
-// create class `Rectangle` w/ input filter, print instance method
-class Rectangle {
+module.exports = class Rectangle {
   constructor (w, h) {
     if (w > 0 && h > 0) {
       this.width = w;
@@ -10,8 +9,7 @@ class Rectangle {
 
   print () {
     for (let i = 0; i < this.height; i++) {
-      console.log('X'.repeat(this.width));
+      console.log(('X'.repeat(this.width)));
     }
   }
-}
-
+};
