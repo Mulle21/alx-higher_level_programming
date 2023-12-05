@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """A script that takes in the name of
 a state as an argument and list * cities"""
@@ -20,3 +19,4 @@ if __name__ == '__main__':
     rows = cur.fetchall()
     print(", ".join([row[0] for row in rows]))
     cur.close()
+    db.close()
